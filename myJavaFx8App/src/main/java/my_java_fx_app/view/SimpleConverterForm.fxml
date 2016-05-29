@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane prefHeight="363.0" prefWidth="693.0" 
+stylesheets="@MyTheme.css" 
+xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="my_java_fx_app.view.SimpleConverterFormController">
+ <children>
+    <VBox prefHeight="200.0" prefWidth="100.0" spacing="6.0" 
+    AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="6.0" 
+    AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
+      <children>
+         <HBox spacing="6.0">
+             <Label text="montant en euro :"/> <TextField fx:id="txtMontant" />
+         </HBox>
+         <Button text="euroToFranc" onAction="#handleEuroToFranc" /> 
+         <HBox spacing="6.0">
+              <Label text="montant en franc :" /> <Label fx:id="lblResultatConversion" />
+         </HBox>
+      </children>
+   </VBox>
+ </children>
+</AnchorPane>
