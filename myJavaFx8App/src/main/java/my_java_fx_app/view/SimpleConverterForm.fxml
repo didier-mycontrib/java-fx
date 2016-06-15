@@ -9,7 +9,7 @@
 <?import javafx.scene.control.TextField?>
 
 <AnchorPane prefHeight="363.0" prefWidth="693.0" 
-stylesheets="@MyTheme.css" 
+stylesheets="@MyTheme.css"  styleClass="convert-background"
 xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" 
 fx:controller="my_java_fx_app.view.SimpleConverterFormController">
  <children>
@@ -18,11 +18,14 @@ fx:controller="my_java_fx_app.view.SimpleConverterFormController">
     AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
       <children>
          <HBox spacing="6.0">
-             <Label text="montant en euro :"/> <TextField fx:id="txtMontant" />
+             <Label text="montant en euro :"/> <TextField fx:id="txtFieldMontant" />
          </HBox>
-         <Button text="euroToFranc" onAction="#handleEuroToFranc" /> 
+          <HBox spacing="6.0">
+              <Label text="montant en franc :" /> <Label fx:id="lblResConvFranc" />
+         </HBox>
+         <Button text="euroToDollar" onAction="#handleEuroToDollar" /> 
          <HBox spacing="6.0">
-              <Label text="montant en franc :" /> <Label fx:id="lblResultatConversion" />
+              <Label text="montant en dollar :" /> <Label fx:id="lblResConvDollar" />
          </HBox>
       </children>
    </VBox>

@@ -1,0 +1,16 @@
+.drawing-scene-background {
+    -fx-background-color: #eeeeaa;
+}
+
+.drawing-area-background {
+    -fx-background-color: #ffffff;
+}
+
+.person-background {
+    -fx-background-color: #aaeeee;
+}
+
+.convert-background {
+    -fx-background-color: #eeaaee;
+}
+

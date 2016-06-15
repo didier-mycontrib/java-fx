@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import my_java_fx_app.view.RootLayoutController;
 
@@ -22,6 +23,9 @@ import my_java_fx_app.view.RootLayoutController;
 public class MyJavaFx8App extends Application {
 	
 	private BorderPane rootLayout=null;
+	private Pane drawingPane=null;
+	private Pane converterPane=null;
+	private Pane personPane=null;
     
 	public static void main(String[] args) {
 	        launch(args);
@@ -55,19 +59,37 @@ public class MyJavaFx8App extends Application {
          showSimpleConverterForm();
     }
     
-    public void showSimpleConverterForm() {
+    private Pane loadFxmlPane(String fxmlPath) {
+    	Pane pane=null;
         try {
-            // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(this.getClass().getResource("view/SimpleConverterForm.fxml"));
-            AnchorPane simpleFormPane = (AnchorPane) loader.load();
-
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(simpleFormPane);
-
+            loader.setLocation(this.getClass().getResource(fxmlPath));
+            pane = (Pane) loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return pane;
+    }
+    
+    public void showSimpleConverterForm() {
+    	if(converterPane==null){
+    		converterPane = loadFxmlPane("view/SimpleConverterForm.fxml");
+    	}
+    	rootLayout.setCenter(converterPane);
+    }
+    
+    public void showDrawingScene() {
+    	if(drawingPane==null){
+    	    drawingPane = loadFxmlPane("view/DrawingSceneLayout.fxml");
+    	}
+    	rootLayout.setCenter(drawingPane);
+    }
+    
+    public void showPersonScene() {
+    	if(personPane==null){
+    		personPane = loadFxmlPane("view/PersonSceneLayout.fxml");
+    	}
+    	rootLayout.setCenter(personPane);
     }
     
    

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+
+<BorderPane prefHeight="363.0" prefWidth="693.0" 
+stylesheets="@MyTheme.css" styleClass="drawing-scene-background"
+xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="my_java_fx_app.view.DrawingSceneController">
+   <top>
+         <HBox spacing="4.0" >
+             <Label text="shape:"/><ComboBox fx:id="comboBoxShape"/>
+             <Label text="color:"/> <ColorPicker fx:id="colorPickerLine" /> 
+             <Label text="fill:"/> <ColorPicker fx:id="colorPickerFill" />
+             <Button text="undo" onAction="#handleUndo" /><Button text="clear" onAction="#handleClearAll" />
+         </HBox>
+    </top>
+   <center>
+      <AnchorPane fx:id="drawingPane" styleClass="drawing-area-background"/>
+   </center>
+   <bottom>
+         <HBox spacing="6.0" alignment="BASELINE_RIGHT">
+              <Label text="coords: "/> <Label  fx:id="lblCoords" />
+         </HBox>
+   </bottom>
+</BorderPane>

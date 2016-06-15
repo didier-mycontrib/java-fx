@@ -11,7 +11,8 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
-@SuppressWarnings("restriction")//pour eviter warning access a javaFx integre dans partie "ext" de java8
+//@SuppressWarnings("restriction")//pour eviter warning access a javaFx 
+//integre dans partie "ext" de java8 si pas de plugin efxclipse dans eclipse
 public class HelloWorldJavaFx8App extends Application {
     
     @Override

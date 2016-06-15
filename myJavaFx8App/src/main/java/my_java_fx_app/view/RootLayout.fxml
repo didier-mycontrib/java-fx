@@ -15,9 +15,17 @@ fx:controller="my_java_fx_app.view.RootLayoutController">
         <menus>
           <Menu text="File">
                <items>
-                  <MenuItem  onAction="#handleOpen" text="Open..."></MenuItem>
-                  <MenuItem  onAction="#handleSaveAs" text="Save As..." />
+                  <!-- <MenuItem  onAction="#handleOpen" text="Open..."></MenuItem>
+                  <MenuItem  onAction="#handleSaveAs" text="Save As..." /> -->
                   <MenuItem  onAction="#handleExit" text="Exit" />
+               </items>
+          </Menu>
+          <Menu text="Scenes">
+               <items>
+                  <MenuItem  onAction="#handleDisplayConverterScene" text="converter"></MenuItem>
+                  <MenuItem  onAction="#handleDisplayDrawingScene" text="drawing" /> 
+                  <MenuItem  onAction="#handleDisplayPersonScene" text="person data" /> 
+                 <!--  <MenuItem  onAction="#handleDisplayOtherScene" text="other" /> -->
                </items>
           </Menu>
           <Menu  text="Help">
@@ -28,4 +36,10 @@ fx:controller="my_java_fx_app.view.RootLayoutController">
         </menus>
       </MenuBar>
    </top>
+   <!-- <center> variable mainContent / switch here </center> -->
+   <bottom>
+         <HBox spacing="6.0">
+              <Label  fx:id="lblMessage" />
+         </HBox>
+   </bottom>
 </BorderPane>
