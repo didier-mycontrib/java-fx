@@ -8,6 +8,7 @@ import my_java_fx_app.MyJavaFx8App;
 
 public class RootLayoutController {
 	
+
 	// Reference to the main application:
     private MyJavaFx8App mainApp;
 
@@ -60,20 +61,4 @@ public class RootLayoutController {
     	//mainApp.showOther();
     }
     
-    
-    
-    
-    /*
-    @FXML
-    private void handleSaveAs() {
-        //mainApp..
-        System.out.println("saveAs ...");
-    }
-    
-    @FXML
-    private void handleOpen() {
-        //mainApp..
-        System.out.println("open ...");
-    }
-    */
 }

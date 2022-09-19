@@ -1,25 +1,17 @@
 package my_java_fx_app;
 
 
-
 import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import my_java_fx_app.view.RootLayoutController;
 
-/*
- * http://download.eclipse.org/efxclipse/updates-released/2.3.0/site/ plugin-eclipse pour javaFx
- * http://docs.oracle.com/javase/8/javafx/api/ javadoc de javaFx
- */
 
-//@SuppressWarnings("restriction")//pour eviter warning access a javaFx 
-//integre dans partie "ext" de java8 si pas de plugin efxclipse dans eclipse
 public class MyJavaFx8App extends Application {
 	
 	private BorderPane rootLayout=null;
@@ -37,7 +29,7 @@ public class MyJavaFx8App extends Application {
     	 // Load root layout from fxml file.
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MyJavaFx8App.class
-                .getResource("view/RootLayout.fxml"));
+                .getResource("/fxml/RootLayout.fxml"));
         
 		try {
 			rootLayout = (BorderPane) loader.load();
@@ -56,7 +48,8 @@ public class MyJavaFx8App extends Application {
          primaryStage.setScene(scene);
          primaryStage.show();
          
-         showSimpleConverterForm();
+         //showSimpleConverterForm();
+         showDrawingScene();
     }
     
     private Pane loadFxmlPane(String fxmlPath) {
@@ -73,21 +66,21 @@ public class MyJavaFx8App extends Application {
     
     public void showSimpleConverterForm() {
     	if(converterPane==null){
-    		converterPane = loadFxmlPane("view/SimpleConverterForm.fxml");
+    		converterPane = loadFxmlPane("/fxml/SimpleConverterForm.fxml");
     	}
     	rootLayout.setCenter(converterPane);
     }
     
     public void showDrawingScene() {
     	if(drawingPane==null){
-    	    drawingPane = loadFxmlPane("view/DrawingSceneLayout.fxml");
+    	    drawingPane = loadFxmlPane("/fxml/DrawingSceneLayout.fxml");
     	}
     	rootLayout.setCenter(drawingPane);
     }
     
     public void showPersonScene() {
     	if(personPane==null){
-    		personPane = loadFxmlPane("view/PersonSceneLayout.fxml");
+    		personPane = loadFxmlPane("/fxml/PersonSceneLayout.fxml");
     	}
     	rootLayout.setCenter(personPane);
     }

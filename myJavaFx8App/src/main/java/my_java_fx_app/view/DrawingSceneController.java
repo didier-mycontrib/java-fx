@@ -6,7 +6,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
@@ -21,12 +20,6 @@ import javafx.scene.shape.Shape;
 
 public class DrawingSceneController {
 
-	/*
-	 * // Reference to the main application: private MyJavaFx8App mainApp;
-	 * 
-	 * 
-	 * public void setMainApp(MyJavaFx8App mainApp) { this.mainApp = mainApp; }
-	 */
 	@FXML
 	private Label lblCoords;
 	
@@ -93,41 +86,28 @@ public class DrawingSceneController {
 		
 		
 		
-		drawingPane.setOnMousePressed(new EventHandler<MouseEvent>(){
-
-		    public void handle(MouseEvent me){
-
+		drawingPane.setOnMousePressed((MouseEvent me)->{
 		    	lblCoords.setText("x="+me.getX()+",y="+me.getY());
 		    	initShape(me.getX(),me.getY());
 		    }
-
-		});
+		);
 		
-		drawingPane.setOnMouseReleased(new EventHandler<MouseEvent>(){
-
-		    public void handle(MouseEvent me){
-
+		drawingPane.setOnMouseReleased((MouseEvent me)->{
 		    	lblCoords.setText("x="+me.getX()+",y="+me.getY());
 		    	updateShapeSize(me.getX(),me.getY());
 		    }
-
-		});
+		);
 		
-		drawingPane.setOnMouseDragged(new EventHandler<MouseEvent>(){
-
-		    public void handle(MouseEvent me){
-
+		drawingPane.setOnMouseDragged((MouseEvent me)->{
 		    	lblCoords.setText("x="+me.getX()+",y="+me.getY());
 		    	updateShapeSize(me.getX(),me.getY());
 		    }
-
-		});
+		);
 		
-		drawingPane.setOnMouseMoved(new EventHandler<MouseEvent>(){
-		    public void handle(MouseEvent me){
+		drawingPane.setOnMouseMoved((MouseEvent me)->{
 		    	lblCoords.setText("x="+me.getX()+",y="+me.getY());
 		    }
-		});
+		);
 	
 	}
 	
@@ -179,7 +159,7 @@ public class DrawingSceneController {
 			Circle circle = (Circle)this.currentShape;
 			circle.setRadius(Math.sqrt( Math.pow(x-circle.getCenterX(),2) + Math.pow(y-circle.getCenterY(),2)));
 			break;
-	}
+	   }
 	}
 
 }
